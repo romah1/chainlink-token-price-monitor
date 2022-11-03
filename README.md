@@ -1,5 +1,7 @@
 # Chainlink price monitor
 
+This script monitors `AnswerUpdated` events and prints them to console 
+
 ### Build:
 
 `go build cli/main.go`
