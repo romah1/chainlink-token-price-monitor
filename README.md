@@ -1,13 +1,11 @@
 # Chainlink price monitor
 
-### Building:
+### Build:
 
 `go build cli/main.go`
 
-`./main -h`
-
 ### Example usage:
-
+`./main -h`
 ```
 Usage of ./main:
   -contract-abi string
