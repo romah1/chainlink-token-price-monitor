@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"flag"
+	"fmt"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
@@ -19,7 +20,7 @@ func main() {
 	flag.StringVar(&contractAbiString, "contract-address", "", "contract address")
 	flag.StringVar(&contractAbiString, "contract-abi", "", "contract abi string")
 	flag.Parse()
-	
+
 	client, err := ethclient.Dial(wssEndpoint)
 	if err != nil {
 		panic(err)
@@ -37,7 +38,7 @@ func main() {
 	for {
 		select {
 		case event := <-events:
-			println(event.Current)
+			fmt.Printf("Price %d at %d", event.Current, event.UpdatedAt)
 		}
 	}
 }
